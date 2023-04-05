@@ -1,0 +1,13 @@
+@import "../../index.scss";
+
+.navmodal {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(239, 239, 239, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

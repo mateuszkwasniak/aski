@@ -1,0 +1,111 @@
+@import "../../../index.scss";
+
+.services {
+  width: 100vw;
+  min-height: calc(100vh - 11.5rem);
+  @include mobile {
+    height: fit-content;
+  }
+  padding: 7rem 20rem 7rem 20rem;
+  @include medium {
+    padding: 7rem 16rem 7rem 16rem;
+  }
+  @include smaller {
+    padding: 7rem 12rem 7rem 12rem;
+  }
+  @include small {
+    padding: 7rem 8rem 7rem 8rem;
+  }
+  @include mini {
+    padding: 7rem 6rem 7rem 6rem;
+  }
+  @include micro {
+    padding: 7rem 3rem 7rem 3rem;
+  }
+  @include mobile {
+    padding: 7rem 1rem 7rem 1rem;
+  }
+  background-color: var(--bcg-light);
+
+  .wrapper {
+    min-height: calc(100vh - (11.5rem + 14rem));
+    width: 100%;
+    display: flex;
+    @include micro {
+      flex-direction: column;
+      gap: 10rem;
+    }
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      color: var(--text-black3);
+      flex: 1;
+      @include micro {
+        flex: 0.5;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .right {
+      width: 100%;
+      @include mobile {
+        width: 80%;
+      }
+      flex: 2;
+      color: var(--text-black1);
+
+      .columns {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        @include ssmall {
+          justify-content: center;
+        }
+        @include mobile {
+          flex-direction: column;
+          gap: 4.5rem;
+        }
+        gap: 9rem;
+
+        ul {
+          width: 30%;
+          @include mobile {
+            width: 100%;
+          }
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 4.5rem;
+
+          li {
+            display: flex;
+            gap: 1.6rem;
+            align-items: center;
+            justify-content: flex-start;
+
+            div {
+              flex-shrink: 0;
+              width: 5rem;
+              height: 5rem;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+            span {
+              font-size: 2.1rem;
+              font-weight: 500;
+              text-align: start;
+            }
+          }
+        }
+      }
+    }
+  }
+}

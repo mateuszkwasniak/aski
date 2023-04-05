@@ -1,0 +1,82 @@
+@import "../../../index.scss";
+
+.about {
+  width: 100vw;
+  min-height: calc(100vh - 11.5rem);
+
+  @include micro {
+    height: fit-content;
+  }
+  padding: 7rem 20rem 7rem 20rem;
+  @include medium {
+    padding: 7rem 16rem 7rem 16rem;
+  }
+  @include smaller {
+    padding: 7rem 12rem 7rem 12rem;
+  }
+  @include small {
+    padding: 7rem 8rem 7rem 8rem;
+  }
+  @include mini {
+    padding: 7rem 6rem 7rem 6rem;
+  }
+  @include micro {
+    padding: 7rem 3rem 7rem 3rem;
+  }
+  @include mobile {
+    padding: 7rem 2rem 0rem 2rem;
+  }
+  background-color: var(--bcg-dark);
+
+  .wrapper {
+    min-height: calc(100vh - (11.5rem + 14rem));
+    @include mobile {
+      min-height: calc(100vh - (11.5rem + 7rem));
+    }
+    display: flex;
+    @include micro {
+      flex-direction: column-reverse;
+    }
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+    @include mini {
+      gap: 5rem;
+    }
+
+    .left {
+      flex: 0.8;
+      @include mini {
+        flex: 1.2;
+      }
+
+      height: 100%;
+      @include mobile {
+        background-color: var(--bcg-light);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include mobile {
+          width: 100vw;
+        }
+      }
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      color: var(--text-light);
+      @include micro {
+        align-items: center;
+      }
+      @include mobile {
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}

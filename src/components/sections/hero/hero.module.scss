@@ -1,0 +1,142 @@
+@import "../../../index.scss";
+
+.hero {
+  margin-top: 15.5rem;
+  @include mobile {
+    margin-top: 0;
+  }
+  padding: 2rem 20rem 5rem 20rem;
+  @include medium {
+    padding: 2rem 16rem 7rem 16rem;
+  }
+  @include smaller {
+    padding: 2rem 12rem 7rem 12rem;
+  }
+  @include small {
+    padding: 2rem 8rem 7rem 8rem;
+  }
+  @include mini {
+    padding: 2rem 6rem 7rem 6rem;
+  }
+  @include micro {
+    padding: 2rem 3rem 7rem 3rem;
+  }
+  @include mobile {
+    padding: 11rem 2rem 7rem 2rem;
+  }
+  width: 100vw;
+  min-height: calc(100vh - 15.5rem);
+  @include mobile {
+    min-height: 100vh;
+  }
+
+  color: var(--text-black1);
+  @include mini {
+    color: var(--text-light);
+  }
+  background-color: var(--bcg-light);
+  @include mini {
+    background-color: transparent;
+  }
+  @include mini {
+    background: url("../../../assets/hero.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mini {
+      flex-direction: column;
+    }
+
+    gap: 10rem;
+    @include medium {
+      gap: 7rem;
+    }
+    @include small {
+      gap: 3rem;
+    }
+
+    .left {
+      width: 120rem;
+      @include ssmall {
+        width: 50rem;
+      }
+      @include smobile {
+        width: 100%;
+      }
+      background-color: transparent;
+      display: flex;
+      flex-direction: column;
+      @include mobile {
+        align-items: center;
+      }
+      gap: 3rem;
+      @include mobile {
+        gap: 2rem;
+      }
+
+      h1 {
+        font-size: 8rem;
+        font-weight: 700;
+        line-height: 8.5rem;
+        @include smaller {
+          font-size: 7rem;
+          line-height: 8rem;
+        }
+        @include ssmall {
+          font-size: 6.5rem;
+          line-height: 7rem;
+        }
+        @include mini {
+          padding-top: 4rem;
+        }
+
+        @include mobile {
+          padding-top: 0;
+        }
+        @include smobile {
+          font-size: 4rem;
+          line-height: 4.5rem;
+          overflow-wrap: break-word;
+        }
+      }
+
+      p {
+        opacity: 1;
+      }
+    }
+
+    .right {
+      width: 100%;
+      @include mini {
+        display: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 11.5rem;
+        height: auto;
+        @include mobile {
+          top: 6.5rem;
+          background-color: var(--bcg-dark);
+        }
+        z-index: -5;
+        opacity: 0.8;
+      }
+
+      img {
+        width: 100%;
+        height: calc(100vh - 22rem);
+        object-fit: cover;
+        @include mini {
+          filter: brightness(90%);
+        }
+      }
+    }
+  }
+}

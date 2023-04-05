@@ -1,0 +1,161 @@
+:root {
+  --bcg-light: rgb(239, 239, 239);
+  --bcg-dark: #181818;
+  --text-light: #ffffff;
+  --text-black1: #000000;
+  --text-black2: #020303;
+  --text-black3: #060919;
+}
+
+@mixin smobile {
+  @media (max-width: 545px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 660px) {
+    @content;
+  }
+}
+
+@mixin micro {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin mini {
+  @media (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin ssmall {
+  @media (max-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin smaller {
+  @media (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (max-width: 1720px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-margin-top: 11.5rem;
+  @include mobile {
+    scroll-margin-top: 6.5rem;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bcg-light);
+  @include mini {
+    background-color: var(--bcg-dark);
+  }
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--text-black1);
+  font-size: 1.75rem;
+  padding-bottom: 0.5rem;
+}
+
+a:hover,
+a:active {
+  border-bottom: 0.2rem solid var(--text-black1);
+}
+
+a.button {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.4rem 3.2rem;
+  font-weight: 500;
+  color: var(--text-light) !important;
+  background: radial-gradient(
+    181.48% 884.19% at 0% -15.6%,
+    #000000 12.5%,
+    #edbcbc 100%
+  );
+
+  box-shadow: 0px 15px 36px rgba(235, 166, 166, 0.3);
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+a.button:hover,
+a.button.white:hover {
+  border: none;
+  scale: 1.05;
+  box-shadow: 0px 15px 36px rgba(235, 166, 166, 0.85);
+}
+
+a.button.white {
+  background: radial-gradient(
+    218.91% 1070.16% at 0% -15.6%,
+    #efefef 12.5%,
+    #eba6a6 100%
+  );
+  box-shadow: 0px 15px 36px rgba(246, 87, 20, 0.3);
+  color: var(--text-black1) !important;
+}
+
+h2 {
+  font-size: 6.5rem;
+  font-weight: 700;
+  padding-bottom: 1rem;
+  @include smobile {
+    font-size: 4rem;
+  }
+}
+
+p {
+  font-size: 2.1rem;
+  font-weight: 500;
+  line-height: 3.4rem;
+  opacity: 0.9;
+
+  @include small {
+    font-size: 1.7rem;
+    line-height: 3rem;
+  }
+  @include smobile {
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+  }
+}

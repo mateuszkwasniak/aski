@@ -1,0 +1,116 @@
+@import "../../../index.scss";
+
+.footer {
+  width: 100vw;
+  padding: 7rem 20rem 4rem 20rem;
+  @include medium {
+    padding: 7rem 16rem 4rem 16rem;
+  }
+  @include smaller {
+    padding: 7rem 12rem 4rem 12rem;
+  }
+  @include small {
+    padding: 7rem 8rem 4rem 8rem;
+  }
+  @include mini {
+    padding: 7rem 6rem 4rem 6rem;
+  }
+  @include micro {
+    padding: 7rem 3rem 4rem 3rem;
+  }
+  background-color: var(--bcg-light);
+  color: var(--text-black1);
+  display: flex;
+  flex-direction: column;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 5rem;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .logo {
+        width: 25rem;
+        height: 7.5rem;
+        @include micro {
+          display: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      h5 {
+        padding-top: 1rem;
+        // @include mobile {
+        //   padding-top: 5rem;
+        // }
+        font-weight: 700;
+        font-size: 1.8rem;
+      }
+
+      span {
+        font-size: 1.8rem;
+      }
+    }
+
+    .right {
+      display: flex;
+      gap: 20rem;
+      @include ssmall {
+        gap: 10rem;
+      }
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+      }
+      .column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        h4 {
+          font-weight: 500;
+          font-size: 2.1rem;
+        }
+
+        span {
+          font-size: 1.8rem;
+        }
+      }
+
+      .socials {
+        display: flex;
+        gap: 4rem;
+
+        .social {
+          width: 3.5rem;
+          height: 3.5rem;
+          border-radius: 400px;
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+    span {
+      font-size: 1.8rem;
+    }
+  }
+}

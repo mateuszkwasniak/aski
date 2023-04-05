@@ -1,0 +1,165 @@
+@import "../../index.scss";
+.navbar {
+  width: 100vw;
+  padding: 4rem 20rem;
+  @include medium {
+    padding: 4rem 16rem;
+  }
+  @include smaller {
+    padding: 4rem 12rem;
+  }
+  @include small {
+    padding: 4rem 8rem;
+  }
+  @include mini {
+    padding: 4rem 6rem;
+  }
+  @include micro {
+    padding: 4rem 3rem;
+  }
+  @include mobile {
+    padding: 0.5rem 1rem;
+  }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--bcg-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: padding 0.3s, border-bottom 0.3s;
+
+  &.scrolled {
+    padding: 2rem 20rem;
+    border-bottom: 0.3rem solid var(--text-black2);
+    @include medium {
+      padding: 2rem 16rem;
+    }
+    @include smaller {
+      padding: 2rem 12rem;
+    }
+    @include small {
+      padding: 2rem 8rem;
+    }
+    @include mini {
+      padding: 2rem 6rem;
+    }
+    @include micro {
+      padding: 2rem 3rem;
+    }
+    @include mobile {
+      padding: 0.35rem 1rem;
+    }
+  }
+
+  .logo {
+    width: 25rem;
+    height: 7.5rem;
+    @include mobile {
+      width: 20rem;
+      height: 5.5rem;
+    }
+
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .btnBurger {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 6rem;
+    height: 7rem;
+    @include mobile {
+      width: 5rem;
+      height: 3.75rem;
+    }
+    background-color: transparent;
+    border: none;
+    z-index: 100;
+    cursor: pointer;
+
+    .burger {
+      width: 100%;
+      height: 0.75rem;
+      @include mobile {
+        height: 0.5rem;
+      }
+      transition: all 0.3s ease;
+      background-color: var(--text-black3);
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 6rem;
+        height: 0.75rem;
+        @include mobile {
+          width: 5rem;
+          height: 0.5rem;
+        }
+        transition: all 0.3s ease;
+        border: none;
+        background-color: var(--text-black3);
+      }
+
+      &::before {
+        transform: translateY(-2rem);
+        @include mobile {
+          transform: translateY(-1.1rem);
+        }
+      }
+
+      &::after {
+        transform: translateY(2rem);
+        @include mobile {
+          transform: translateY(1.1rem);
+        }
+      }
+
+      &.open {
+        background-color: transparent;
+      }
+
+      &.open::before {
+        transform: rotate(45deg);
+      }
+      &.open::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5.5rem;
+
+    li {
+      font-size: 1.75rem;
+      font-weight: 500;
+    }
+  }
+
+  .modallist {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+
+    li {
+      a {
+        font-size: 2.8rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
